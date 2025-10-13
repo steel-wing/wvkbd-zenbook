@@ -207,13 +207,16 @@ kbd_init_layout(struct layout *l, uint32_t width, uint32_t height)
     uint32_t x = 0, y = 0;
     uint8_t rows = kbd_get_rows(l);
 
-    l->keyheight = height / rows;
+    l->keyheight = height / (rows);
+    bool first = true;
 
     struct key *k = l->keys;
     double rowlength = kbd_get_row_length(k);
     double rowwidth = 0.0;
     while (k->type != Last) {
         if (k->type == EndRow) {
+
+            first = false;
             y += l->keyheight;
             x = 0;
             rowwidth = 0.0;
@@ -229,7 +232,11 @@ kbd_init_layout(struct layout *l, uint32_t width, uint32_t height)
                 x++;
             }
         }
-        k->h = l->keyheight;
+        if (first) {
+            k->h = l->keyheight / 2;
+        } else {
+            k->h = l->keyheight;
+        }
         k++;
     }
 }
@@ -581,7 +588,7 @@ kbd_draw_key(struct kbd *kb, struct key *k, enum key_draw_type type)
         kbd_clear_last_popup(kb);
 
         kb->last_popup_x = k->x;
-        kb->last_popup_y = kb->h + k->y - k->h;
+        kb->last_popup_y = kb->h + k->y; // used to be = kb->h + k->y - k->h
         kb->last_popup_w = k->w;
         kb->last_popup_h = k->h;
 

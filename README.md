@@ -1,12 +1,9 @@
-# wvkbd - On-screen keyboard for wlroots that sucks less
+# wvkbd-zenbook - suckless on screen keyboard for the Asus Zenbook Duo
 
-<img src="https://raw.githubusercontent.com/jjsullivan5196/wvkbd/master/contrib/wvkbd-mobintl.jpg" width=300 /> <img src="https://raw.githubusercontent.com/jjsullivan5196/wvkbd/master/contrib/wvkbd-mobintl-cyrillic.jpg" width=300 />
+This is a slightly modified version of the default wvkbd `deskintl` layout, which aims to bring a similar visual and functional typing experience
+to the Asus Zenbook Duo on Linux as is had by default on Windows.
 
-This project aims to deliver a minimal but practically usable implementation of a wlroots on-screen
-keyboard in legible C. This will **only** be a keyboard, not a feedback buzzer,
-led blinker, or anything that requires more than what's needed to input text
-quickly. The end product should be a static codebase that can be patched to add
-new features.
+<img title="screenshot" alt="A screenshot of an on-screen keyboard" src="/contrib/screenshot-2025-10-12_18-28-45.png">
 
 ## Features
 
@@ -23,9 +20,6 @@ new features.
  - Compose key for character variants (e.g. diacritics)
  - Show/hide keyboard on signals (SIGUSR1 = hide, SIGUSR2 = show, SIGRTMIN = toggle)
  - Automatic portrait/landscape detection and subsequent layout switching
-
-
-<img src="https://raw.githubusercontent.com/jjsullivan5196/wvkbd/master/contrib/wvkbd-mobintl-landscape.jpg" width=640 />
 
 There are some areas that still need work:
 
@@ -44,20 +38,12 @@ You'll need the following developer packages
 
 You also need [scdoc](https://git.sr.ht/~sircmpwn/scdoc/) to generate the documentation.
 
-The default set of layouts is called `mobintl` *(mobile international)*, which groups various layouts aimed at mobile devices
-and also attempts to accommodate various international users. Run `make`. The resulting binary is called `wvkbd-mobintl`.
-
-The other set of layouts is called `deskintl` *(desktop international)*, which groups layouts aimed at desktop, laptop, and
-tablet devices with a larger touchscreen. The set is US-International English. Run `make LAYOUT=deskintl`. The resulting binary
-is called `wvkbd-deskintl`.
-
-You can, however, define your own layouts by copying and modifying `config.mobintl.h`, `layout.mobintl.h` and `keymap.mobintl.h`
-(replace `mobintl` for something like `yourlayout`), or `config.deskintl.h`, `layout.deskintl.h` and `keymap.deskintl.h`. Then
-make your layout set using `make LAYOUT=yourlayout`, and the resulting binary will be `wvkbd-yourlayout`.
+The default set of layouts is called `zenbook`, which groups various layouts aimed at mobile devices
+and also attempts to accommodate various international users. Run `make`. The resulting binary is called `wvkbd-zenbook`.
 
 ## Usage
 
-Run `wvkbd-mobintl`, `wvkbd-deskintl` or the binary for your custom layout set.
+Run `wvkbd-zenbook`.
 
 You can switch between the layouts/layers of the keyboard by pressing the
 ⌨ key (little keyboard) the bottom-left (press shift to iterate back instead of
@@ -73,13 +59,13 @@ Wvkbd has an output mode `-o` that will echo its output to standard output. This
 audio/haptic feedback, a feature explicitly out of scope for wvkbd. To achieve this, simply pipe wvkbd's output through the external tool
 [clickclack](https://git.sr.ht/~proycon/clickclack):
 
-`$ wvkbd-mobintl -l simple,special,emoji -o | clickclack -V -f keypress.wav`
+`$ wvkbd-zenbook -l simple,special,emoji -o | clickclack -V -f keypress.wav`
 
 Another output mode, `-O` will let the keyboard output keys which are swiped over. It can be used by an external program, such as [swipeGuess](https://git.sr.ht/~earboxer/swipeGuess) to get swipe-typing support.
 
-`$ wvkbd-mobintl -O | swipeGuess.sh words.txt | completelyTypeWord.sh`
+`$ wvkbd-zenbook -O | swipeGuess.sh words.txt | completelyTypeWord.sh`
 
-### Compose button
+### wvkbd - Compose button
 
 The default mobile international layout features a Compose button (`Cmp`)
 which, when combined with another key, opens up a layout that offers variants
@@ -98,27 +84,3 @@ Most layouts also feature the following that are less obvious:
 
 Last, but not least, pressing Cmp + space or Cmp + ⌨  or Cmp + Abc opens up an index that allows you to immediately jump to any
 layout by name, even layouts not explicitly added to your layers on startup.
-
-## Contribute
-
-Any contributions are welcome, there are two ways to contribute, the first one is **preferred**:
-
-1. [Sourcehut](https://git.sr.ht/~proycon/wvkbd) - Submit your patches using `git send-email` to [~mil/sxmo-devel@lists.sr.ht](mailto:~mil/sxmo-devel@lists.sr.ht), follow [these contribution guidelines](https://sxmo.org/contribute/). Questions can also be asked on Sxmo's [mailing lists](https://sxmo.org/support/).
-2. [Github](https://github.com/jjsullivan5196/wvkbd/) - Submit a pull request or open an issue *(legacy method)*
-
-This project was started by [John Sullivan](https://jsullivan.cc/) and is
-currently being maintained by the [Sxmo](https://sxmo.org) project, whose
-maintainers will ensure both git remotes are kept in sync at all times.
-
-For code contributions, please run `make format` (requires `clang-format`)
-before sending a patch (opening a PR) and include as much relevant detail as
-possible.
-
-## Related projects
-
-* [clickclack](https://git.sr.ht/~proycon/clickclack) - Audio/haptic feedback (standalone)
-* [swipeGuess](https://git.sr.ht/~earboxer/swipeGuess) - Word-completion for swipe-typing
-* [Sxmo](https://sxmo.org) - A hackable mobile interface environment for Linux phones that adopted wvkbd as its keyboard
-* [svkbd](https://tools.suckless.org/x/svkbd/) - A similar project as wvkbd but for X11 rather than Wayland
-* [squeekboard](https://gitlab.gnome.org/World/Phosh/squeekboard) - The virtual keyboard developed for the Librem5 (used
-	by Phosh)

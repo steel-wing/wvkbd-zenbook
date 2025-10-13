@@ -3,25 +3,25 @@
 
 #define DEFAULT_FONT "Sans 18"
 #define DEFAULT_ROUNDING 5
-static const int transparency = 255;
+static const int transparency = 128;
 
 struct clr_scheme schemes[] = {
 {
   /* colors */
-  .bg = {.bgra = {15, 15, 15, transparency}},
-  .fg = {.bgra = {45, 45, 45, transparency}},
-  .high = {.bgra = {100, 100, 100, transparency}},
-  .swipe = {.bgra = {100, 255, 100, 64}},
+  .bg = {.bgra = {0, 100, 0, transparency},
+  .fg = {.bgra = {10, 100, 10, transparency}},
+  .high = {.bgra = {33, 100, 33, transparency}},
+  .swipe = {.bgra = {100, 33, 100, 64}},
   .text = {.color = UINT32_MAX},
   .font = DEFAULT_FONT,
   .rounding = DEFAULT_ROUNDING,
 },
 {
   /* colors */
-  .bg = {.bgra = {15, 15, 15, transparency}},
-  .fg = {.bgra = {32, 32, 32, transparency}},
-  .high = {.bgra = {100, 100, 100, transparency}},
-  .swipe = {.bgra = {100, 255, 100, 64}},
+  .bg = {.bgra = {0, 0, 0, transparency}},
+  .fg = {.bgra = {10, 10, 10, transparency}},
+  .high = {.bgra = {33, 33, 33, transparency}},
+  .swipe = {.bgra = {100, 33, 100, 64}},
   .text = {.color = UINT32_MAX},
   .font = DEFAULT_FONT,
   .rounding = DEFAULT_ROUNDING,
