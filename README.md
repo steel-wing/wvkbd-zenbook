@@ -1,4 +1,4 @@
-# wvkbd-zenbook - suckless on screen keyboard for the Asus Zenbook Duo
+# wvkbd-zenbook - a suckless onscreen keyboard for the Asus Zenbook Duo
 
 This is a slightly modified version of the default wvkbd `deskintl` layout, which aims to bring a similar visual and functional typing experience
 to the Asus Zenbook Duo on Linux as is had by default on Windows.
@@ -23,6 +23,7 @@ to the Asus Zenbook Duo on Linux as is had by default on Windows.
 
 There are some areas that still need work:
 
+ - An on screen touchpad would be incredible, but will likely require incredible amounts of work
  - Make sure the virtual input method in wayland is working as best as it can
  - Support for input method protocol in wayland, ability to respond to text
    fields
@@ -43,7 +44,7 @@ and also attempts to accommodate various international users. Run `make`. The re
 
 ## Usage
 
-Run `wvkbd-zenbook`.
+Run `wvkbd-zenbook -L 600`. Choose a different number for a different height value.
 
 You can switch between the layouts/layers of the keyboard by pressing the
 ⌨ key (little keyboard) the bottom-left (press shift to iterate back instead of
