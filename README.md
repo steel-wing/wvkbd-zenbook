@@ -14,7 +14,6 @@ to the Asus Zenbook Duo on Linux as is had by default on Windows.
  - Custom color schemes
  - Proper font drawing
  - Intuitive layouts
- - International layouts (cyrillic, arabic, persian, greek, georgian)
  - Support for 'Copy' keys which are not on the keymap
  - Emoji support
  - Compose key for character variants (e.g. diacritics)
