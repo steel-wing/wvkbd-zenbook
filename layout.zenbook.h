@@ -201,7 +201,7 @@ static struct key keys_full[] = {
 };
 
 static struct key keys_special[] = {
-  {"`", "~", 1.25, Code, KEY_GRAVE, .scheme = 1},
+  {"`", "~", 1.5, Code, KEY_GRAVE, .scheme = 1},
   {"F1", "F1", 1.0, Code, KEY_F1},
   {"F2", "F2", 1.0, Code, KEY_F2},
   {"F3", "F3", 1.0, Code, KEY_F3},
@@ -214,7 +214,7 @@ static struct key keys_special[] = {
   {"F10", "F10", 1.0, Code, KEY_F10},
   {"F11", "F11", 1.0, Code, KEY_F11},
   {"F12", "F12", 1.0, Code, KEY_F12},
-  {"Del", "Del", 1.75, Code, KEY_DELETE, .scheme = 1},
+  {"Del", "Del", 2.0, Code, KEY_DELETE, .scheme = 1},
   {"", "", 0.0, EndRow},
 
   {"Tab", "Tab", 1.75, Code, KEY_TAB, .scheme = 1},
@@ -230,7 +230,7 @@ static struct key keys_special[] = {
   {"p", "P", 1.0, Code, KEY_P, &layouts[ComposeP]},
   {"[", "{", 1.0, Code, KEY_LEFTBRACE, &layouts[ComposeBracket]},
   {"]", "}", 1.0, Code, KEY_RIGHTBRACE, &layouts[ComposeBracket]},
-  {"\\", "|", 1.5, Code, KEY_BACKSLASH, .scheme = 1},
+  {"\\", "|", 1.75, Code, KEY_BACKSLASH, .scheme = 1},
   {"", "", 0.0, EndRow},
 
   {"Caps Lock", "Caps Lock", 2.0, Mod, CapsLock, .scheme = 1},
@@ -245,10 +245,10 @@ static struct key keys_special[] = {
   {"l", "L", 1.0, Code, KEY_L, &layouts[ComposeL]},
   {";", ":", 1.0, Code, KEY_SEMICOLON},
   {"'", "''", 1.0, Code, KEY_APOSTROPHE, &layouts[ComposeBracket]},
-  {"Enter", "Enter",2.0, Code, KEY_ENTER, .scheme = 1},
+  {"Enter", "Enter",2.5, Code, KEY_ENTER, .scheme = 1},
   {"", "", 0.0, EndRow},
 
-  {"Shift", "Shift", 2.25, Mod, Shift, .scheme = 1},
+  {"Shift", "Shift", 2.5, Mod, Shift, .scheme = 1},
   {"z", "Z", 1.0, Code, KEY_Z, &layouts[ComposeZ]},
   {"x", "X", 1.0, Code, KEY_X, &layouts[ComposeX]},
   {"c", "C", 1.0, Code, KEY_C, &layouts[ComposeC]},
@@ -260,7 +260,7 @@ static struct key keys_special[] = {
   {".", ">", 1.0, Code, KEY_DOT, &layouts[ComposePunctuation]},
   {"/", "?", 1.0, Code, KEY_SLASH, &layouts[ComposePunctuation]},
   {"˄", "˄", 1.0, Code, KEY_PAGEUP, .scheme = 1},
-  {"Shift", "Shift", 1.75, Mod, Shift, .scheme = 1},
+  {"Shift", "Shift", 2.0, Mod, Shift, .scheme = 1},
   {"", "", 0.0, EndRow},
 
   {"Ctrl", "Ctrl", 1.5, Mod, Ctrl, .scheme = 1},
@@ -268,12 +268,12 @@ static struct key keys_special[] = {
   {"⊞", "⊞", 1.0, Mod, Super, .scheme = 1},
   {"Alt", "Alt", 1.0, Mod, Alt, .scheme = 1},
   {"⸻", "⸻", 5.0, Code, KEY_SPACE},
-  {"Alt", "Alt", 0.875, Mod, Alt, .scheme = 1},
-  {"Ctrl", "Ctrl", 0.875, Mod, Ctrl, .scheme = 1},
+  {"Alt", "Alt", 1.0, Mod, Alt, .scheme = 1},
+  {"Ctrl", "Ctrl", 1.0, Mod, Ctrl, .scheme = 1},
   {"˂", "˂", 1.0, Code, KEY_HOME, .scheme = 1},
   {"˅", "˅", 1.0, Code, KEY_PAGEDOWN, .scheme = 1},
   {"˃", "˃", 1.0, Code, KEY_END, .scheme = 1},
-  {"Cmp", "Cmp", 0.75, Compose, .scheme = 1},
+  {"Cmp", "Cmp", 1.0, Compose, .scheme = 1},
   /* end of layout */
   {"", "", 0.0, Last},
 };
