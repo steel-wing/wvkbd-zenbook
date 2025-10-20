@@ -3,7 +3,7 @@
 This is a slightly modified version of the default wvkbd `deskintl` layout, which aims to bring a similar visual and functional typing experience
 to the Asus Zenbook Duo on Linux as is had by default on Windows.
 
-<img title="screenshot" alt="A screenshot of an on-screen keyboard" src="/contrib/screenshot-2025-10-12_18-28-45.png">
+<img title="screenshot" alt="A screenshot of an on-screen keyboard" src="/contrib/screenshot-2025-10-19_20-57-19.png">
 
 ## Features
 
